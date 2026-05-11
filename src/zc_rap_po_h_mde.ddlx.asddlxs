@@ -1,0 +1,62 @@
+@Metadata.layer: #CORE
+
+
+
+@UI.headerInfo: {
+  typeName:       'Purchase Order',
+  typeNamePlural: 'Purchase Orders',
+  title:       { type: #STANDARD, value: 'PoId' },
+  description: { type: #STANDARD, value: 'Supplier' }
+}
+
+@UI.presentationVariant: [ {
+  sortOrder: [ { by: 'LastChangedAt', direction: #DESC } ]
+} ]
+
+annotate view ZC_RAP_PO_H with
+{
+
+@UI.facet: [
+  {
+    id:       'GeneralInfo',
+    purpose:  #STANDARD,
+    type:     #IDENTIFICATION_REFERENCE,
+    label:    'General Information',
+    position: 10
+  },
+  {
+    id:            'Items',
+    purpose:       #STANDARD,
+    type:          #LINEITEM_REFERENCE,
+    label:         'Purchase Order Items',
+    position:      20,
+    targetElement: '_Items'
+  }
+]
+
+  @UI.lineItem:       [ { position: 10, label: 'PO ID' } ]
+  @UI.identification: [ { position: 10 } ]
+  @UI.selectionField: [ { position: 10 } ]
+  PoId;
+
+  @UI.lineItem:       [ { position: 20, label: 'Company Code' } ]
+  @UI.identification: [ { position: 20 } ]
+  @UI.selectionField: [ { position: 20 } ]
+  CompanyCode;
+
+  @UI.lineItem:       [ { position: 30, label: 'Supplier' } ]
+  @UI.identification: [ { position: 30 } ]
+  @UI.selectionField: [ { position: 30 } ]
+  Supplier;
+
+  @UI.lineItem:       [ { position: 40, label: 'Status' } ]
+  @UI.identification: [ { position: 40 } ]
+  @UI.selectionField: [ { position: 40 } ]
+  Status;
+
+  @UI.lineItem: [ { position: 50, label: 'Currency' } ]
+  Currency;
+
+  @UI.lineItem: [ { position: 60, label: 'Last Changed At' } ]
+  LastChangedAt;
+};

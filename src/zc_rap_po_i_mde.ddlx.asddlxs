@@ -1,0 +1,49 @@
+@Metadata.layer: #CORE
+
+// ─── View-level UI annotations for the Item object page ────────────────────
+
+@UI.headerInfo: {
+  typeName:       'Purchase Order Item',
+  typeNamePlural: 'Purchase Order Items',
+  title:       { type: #STANDARD, value: 'ItemId' },
+  description: { type: #STANDARD, value: 'Material' }
+}
+
+
+annotate view ZC_RAP_PO_I with
+{
+
+
+@UI.facet: [{
+  id:      'ItemDetails',
+  purpose: #STANDARD,
+  type:    #IDENTIFICATION_REFERENCE,
+  label:   'Item Details',
+  position: 10
+}]
+
+  // ── Item table columns (shown in the Items facet of the Header Object Page)
+  @UI.lineItem:       [{ position: 10, label: 'Item No.' }]
+  @UI.identification: [{ position: 10, label: 'Item No.' }]
+  ItemId;
+
+  @UI.lineItem:       [{ position: 20, label: 'Material' }]
+  @UI.identification: [{ position: 20, label: 'Material' }]
+  Material;
+
+  @UI.lineItem:       [{ position: 30, label: 'Quantity' }]
+  @UI.identification: [{ position: 30, label: 'Quantity' }]
+  Quantity;
+
+  @UI.lineItem:       [{ position: 40, label: 'Unit' }]
+  @UI.identification: [{ position: 40, label: 'Unit' }]
+  Unit;
+
+  @UI.lineItem:       [{ position: 50, label: 'Net Price' }]
+  @UI.identification: [{ position: 50, label: 'Net Price' }]
+  NetPrice;
+
+  @UI.lineItem:       [{ position: 60, label: 'Currency' }]
+  @UI.identification: [{ position: 60, label: 'Currency' }]
+  Currency;
+}
