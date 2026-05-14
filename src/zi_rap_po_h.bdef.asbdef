@@ -1,5 +1,5 @@
 managed implementation in class ZBP_I_RAP_PO_H unique;
-//strict ( 2 );
+strict ( 2 );
 with draft;
 
 // ─── ROOT ENTITY: Purchase Order Header ────────────────────────────────────

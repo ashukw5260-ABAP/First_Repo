@@ -1,5 +1,5 @@
 @AbapCatalog.viewEnhancementCategory: [#NONE]
-@AccessControl.authorizationCheck: #NOT_REQUIRED
+@AccessControl.authorizationCheck: #CHECK
 @EndUserText.label: 'PO Item - Projection Child View'
 @Metadata.allowExtensions: true
 @Metadata.ignorePropagatedAnnotations: true

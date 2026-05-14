@@ -9,11 +9,15 @@ define behavior for ZI_PO alias PO
   create;
   update;
   delete;
-  
+
   association _Items { create; }
-  
+
   field ( mandatory : create ) PO_ID;
-  field ( readonly ) CREATED_BY, CREATED_AT, CHANGED_BY, CHANGED_AT, IS_DELETED;
+  field ( readonly ) CREATED_BY, CREATED_AT, CHANGED_BY, CHANGED_AT;
+
+  // Validations: executed at SAVE time
+  validation ValidateVendorId on save { create; update; field VENDOR_ID; }
+  validation ValidateCurrency  on save { create; update; field CURRENCY;  }
 }
 
 define behavior for ZI_PO_ITEM alias POItem
@@ -23,9 +27,13 @@ define behavior for ZI_PO_ITEM alias POItem
 {
   update;
   delete;
-  
+
   field ( mandatory : create ) ITEM_NO;
-  field ( readonly ) PO_ID, CREATED_BY, CREATED_AT, CHANGED_BY, CHANGED_AT, IS_DELETED;
-  
+  field ( readonly ) PO_ID, CREATED_BY, CREATED_AT, CHANGED_BY, CHANGED_AT;
+
   association _PO;
+
+  // Validations: executed at SAVE time
+  validation ValidateQuantity  on save { create; update; field QUANTITY;  }
+  validation ValidateNetPrice  on save { create; update; field NET_PRICE; }
 }

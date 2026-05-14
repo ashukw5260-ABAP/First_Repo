@@ -1,12 +1,12 @@
 @AbapCatalog.viewEnhancementCategory: [#NONE]
-@AccessControl.authorizationCheck: #NOT_REQUIRED
+@AccessControl.authorizationCheck: #CHECK
 @EndUserText.label: 'PO Item Interface View'
 @Metadata.ignorePropagatedAnnotations: true
 define view entity ZI_PO_ITEM
   as select from zpo_itm
-  association to parent ZI_PO as _PO on $projection.po_id = _PO.po_id
+  association to parent ZI_PO as _PO
+    on  $projection.PO_ID = _PO.PO_ID
 {
-  key mandt      as MANDT,
   key po_id      as PO_ID,
   key item_no    as ITEM_NO,
       material   as MATERIAL,
@@ -15,7 +15,6 @@ define view entity ZI_PO_ITEM
       net_price  as NET_PRICE,
       currency   as CURRENCY,
       plant      as PLANT,
-      is_deleted as IS_DELETED,
       created_by as CREATED_BY,
       created_at as CREATED_AT,
       changed_by as CHANGED_BY,

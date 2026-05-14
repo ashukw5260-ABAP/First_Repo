@@ -1,5 +1,5 @@
 @AbapCatalog.viewEnhancementCategory: [#NONE]
-@AccessControl.authorizationCheck: #NOT_REQUIRED
+@AccessControl.authorizationCheck: #CHECK
 @EndUserText.label: 'PO Header - Projection Root View'
 @Metadata.allowExtensions: true
 @Metadata.ignorePropagatedAnnotations: true

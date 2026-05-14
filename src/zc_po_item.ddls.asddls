@@ -1,10 +1,9 @@
 @EndUserText.label: 'PO Item Projection'
-@AccessControl.authorizationCheck: #NOT_REQUIRED
+@AccessControl.authorizationCheck: #CHECK
 @Metadata.allowExtensions: true
 define view entity ZC_PO_ITEM
   as projection on ZI_PO_ITEM
 {
-  key mandt,
   key po_id,
   key item_no,
       material,
@@ -13,7 +12,6 @@ define view entity ZC_PO_ITEM
       net_price,
       currency,
       plant,
-      is_deleted,
       created_by,
       created_at,
       changed_by,
