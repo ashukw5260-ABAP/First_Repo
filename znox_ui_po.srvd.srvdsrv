@@ -1,0 +1,4 @@
+@EndUserText.label: 'Purchase Order - UI Service Definition'
+define service ZNOX_UI_PO {
+  expose ZNOX_C_PO_HEADER as PurchaseOrder;
+}
