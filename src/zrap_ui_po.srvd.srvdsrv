@@ -1,4 +1,0 @@
-@EndUserText.label: 'Purchase Order - UI Service Definition'
-define service ZRAP_UI_PO {
-  expose ZC_RAP_PO_H as PurchaseOrder;
-}
